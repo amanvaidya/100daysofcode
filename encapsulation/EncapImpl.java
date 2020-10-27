@@ -16,7 +16,7 @@ import org.junit.runner.notification.Failure;
  */
 public class EncapImpl {
 	public static void main(String args[]) {
-		Result result = JUnitCore.runClasses(TestEncap.class);
+		//Result result = JUnitCore.runClasses(TestEncap.class);
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter name");
 		String name = sc.next();
@@ -24,10 +24,10 @@ public class EncapImpl {
 		String age = sc.next();
 		EncapImpl encapImpl = new EncapImpl();
 		System.out.println(encapImpl.result(name, age));
-		for (Failure failure : result.getFailures()) {
+		/*for (Failure failure : result.getFailures()) {
 	         System.out.println(failure.toString());
 	      }
-		System.out.println(result.wasSuccessful());
+		System.out.println(result.wasSuccessful());*/
 		
 	}
 	public String result(String name, String age) {

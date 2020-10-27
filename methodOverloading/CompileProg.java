@@ -1,4 +1,9 @@
 package methodOverloading;
+
+import org.junit.runner.JUnitCore;
+import org.junit.runner.Result;
+import org.junit.runner.notification.Failure;
+
 /**
  * 
  */
@@ -10,15 +15,21 @@ package methodOverloading;
 public class CompileProg{
 	
 	public static void main(String args[]) {
-		System.out.println(add(2,3));
+		Result result = JUnitCore.runClasses(TestCompile.class);
+		CompileProg compileProg = new CompileProg();
+		System.out.println(compileProg.add(2,3));
+		for (Failure failure : result.getFailures()) {
+	         System.out.println(failure.toString());
+	      }
+		System.out.println(result.wasSuccessful());
 	}
-	public static int add(int x, int y) {
+	public  int add(int x, int y) {
 		return x+y;
 	}
-	public static String add(String x, String y) {
+	public  String add(String x, String y) {
 		return "x+y";
 	}
-	public static int add(int x) {
+	public  int add(int x) {
 		return x;
 	}
 }
