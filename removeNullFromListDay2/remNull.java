@@ -20,7 +20,7 @@ public class remNull {
 	public static void main(String args[]) {
 		Result result = JUnitCore.runClasses(testNull.class);
 		remNull remNull = new remNull();
-		List<String> arr = new ArrayList<String>(Arrays.asList("Green",null,"Blue"));
+		List<String> arr = new ArrayList<String>(Arrays.asList("Green",null,"Blue","Black",null));
 		System.out.println(remNull.result(arr));
 		for(Failure failure:result.getFailures()) {
 			System.out.println(failure.toString());

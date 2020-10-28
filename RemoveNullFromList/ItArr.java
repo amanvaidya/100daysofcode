@@ -15,12 +15,22 @@ import java.util.stream.Collectors;
  */
 public class ItArr {
 	public static void main(String args[]) {
+		ItArr itArr = new ItArr();
 		List<String> arr = new ArrayList<>(Arrays.asList("RED", null, "BLUE", null, "GREEN"));
 		//remove null using lambda
-		arr.stream().filter(f->f!=null).collect(Collectors.toList()).forEach(System.out::print);
-		System.out.println("");
+		System.out.println("using lambda");
+		System.out.print(itArr.remNull(arr));
+		System.out.println("using removeIf");
 		//remove null using removeIf
+		System.out.print(itArr.remIf(arr));
+	}
+	public List<String> remNull(List<String>arr){
+		arr=arr.stream().filter(f->f!=null).collect(Collectors.toList());
+		return arr;
+		
+	}
+	public List<String> remIf(List<String>arr){
 		arr.removeIf(Objects::isNull);
-		System.out.print(arr);
+		return arr;
 	}
 }

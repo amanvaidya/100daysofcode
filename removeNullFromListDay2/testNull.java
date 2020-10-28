@@ -24,12 +24,15 @@ public class testNull {
 		input.add("Green");
 		input.add("Blue");
 		input.add("Black");
+		input.add("Blob");
 		List<String> arr  = new ArrayList<String>();
 		arr.add("Green");
 		arr.add(null);
 		arr.add("Blue");
 		arr.add(null);
 		arr.add("Black");
+		arr.add(null);
+		arr.add("Blob");
 		assertEquals(input, remNull.result(arr));
 	}
 
