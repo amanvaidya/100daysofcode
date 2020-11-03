@@ -23,14 +23,15 @@ public class MostVisitedURL {
 		}
 	}
 	public String[] getUrl(String[] arr) {
-		String [] array = new String[arr.length];
-		Set<String> set = new HashSet<String>();
-		 for (int i = 0; i < arr.length; i++) {
-	            if (!set.add(arr[i]))
-	            	arr[i] = ""; // here I am assigning Duplicate instead if find duplicate
-	                                        // you can assign as null or whatever you want to do with duplicates.
-	        }
-		return arr;
+		List<String>list = Arrays.asList(arr);
+		List<String>item =new ArrayList<String>();
+        Set<String> uniqueWords = new HashSet<String>(list);
+		for (String word : uniqueWords) {
+		  	item.add(word);
+    	}
+		String[] array = new String[item.size()];
+		array=item.toArray(array);
+		return array;
 	}
 	
 }
